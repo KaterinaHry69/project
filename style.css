@@ -1,0 +1,268 @@
+body {
+  margin: 0;
+  padding: 40px;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+/* основной ряд */
+.main-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-left: 40px; /* ← сдвиг вправо */
+  margin-top: 5%;
+}
+
+/* картинки */
+.img-large {
+  width: 400px;
+  height: 500px;
+}
+
+.img-person {
+  width: 200px;
+  height: 500px;
+}
+
+/* текстовая колонка */
+.text-column {
+  text-align: left;
+}
+
+.text-column h2 {
+  line-height: 1.1;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* сама кнопка */
+.glow-btn {
+  width: 160px;
+  padding: 12px 0;
+  text-align: center;
+
+  background: linear-gradient(180deg, #444, #222);
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+
+  border-radius: 25px;
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    inset 0 0 10px rgba(255,255,255,0.1);
+
+  transition: all 0.3s ease;
+}
+
+/* наведение */
+.glow-btn:hover {
+  box-shadow:
+    0 0 15px rgba(255,255,255,0.6),
+    0 0 30px rgba(255,255,255,0.4),
+    inset 0 0 10px rgba(255,255,255,0.2);
+
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #fff;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+
+/* правая часть */
+.skills {
+
+  text-align: center;
+}
+
+.white-box {
+  background: white;
+  color: black;
+  padding: 10px;
+  font-size: 90px;
+  
+  width: 370px;
+  letter-spacing: -5px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  margin: 5px 0;
+
+}
+
+/* низ */
+.nickname {
+  text-align: center;
+  font-size: 80px;
+  margin-top: 10px;
+}
+
+.quote {
+  text-align: center;
+  font-size: 50px;
+  opacity: 0.8;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-top: -60px;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nickname {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 4px;
+}
+
+.skills li {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+/* --- Медиазапросы для адаптации --- */
+
+/* Для планшетов и экранов до 1024px */
+@media (max-width: 1024px) {
+  .main-row {
+    flex-wrap: wrap; /* перенос элементов, чтобы не вылазили за экран */
+    margin-left: 20px; /* уменьшаем сдвиг */
+    gap: 20px;
+  }
+
+  .img-large {
+    width: 100%; /* подгонка под ширину */
+    max-width: 400px; /* не больше оригинала */
+    height: auto; /* сохраняем пропорции */
+  }
+
+  .img-person {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .text-column h2 {
+    font-size: 36px; /* чуть меньше на планшете */
+    line-height: 1.2;
+  }
+
+  .white-box {
+    width: 100%;
+    max-width: 370px;
+    font-size: 70px;
+  }
+
+  .nickname {
+    font-size: 60px;
+  }
+
+  .quote {
+    font-size: 40px;
+    margin-top: -40px;
+  }
+}
+
+/* Для мобильных экранов до 768px */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .main-row {
+    flex-direction: column; /* колонки одна под другой */
+    align-items: center;
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  .img-large, .img-person {
+    width: 100%; /* занимают всю ширину */
+    height: auto;
+  }
+
+  .text-column h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .white-box {
+    width: 100%;
+    font-size: 50px;
+  }
+
+  .skills li {
+    font-size: 16px;
+  }
+
+  .nickname {
+    font-size: 50px;
+  }
+
+  .quote {
+    font-size: 30px;
+    margin-top: -30px;
+  }
+}
+
+/* Для совсем маленьких экранов до 480px */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .text-column h2 {
+    font-size: 22px;
+  }
+
+  .white-box {
+    font-size: 40px;
+  }
+
+  .nickname {
+    font-size: 40px;
+  }
+
+  .quote {
+    font-size: 24px;
+    margin-top: -20px;
+  }
+
+  .glow-btn {
+    width: 140px;
+    font-size: 14px;
+  }
+}
+
